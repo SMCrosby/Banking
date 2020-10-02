@@ -5,6 +5,21 @@ namespace Banking {
         static void Main(string[] args) 
             {
 
+            var sav1 = new Savings(0.12, "My Savings");
+            sav1.Deposit(1000);
+            sav1.Print();
+            sav1.PayInterest(1); // pay interest for one month
+            sav1.Print();
+
+            var sav2 = new Savings2(0.12, "My Composite Savings");  // Done with composite in stead of inherited class
+            sav2.Deposit(1000);
+            sav2.Print();
+            sav2.PayInterest(1);
+            sav2.Print();
+
+            Savings2.Transfer(100, sav1, sav2);
+
+
             var acct1 = new Account();
             var acct2 = new Account("My Checking");
             
